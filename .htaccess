@@ -1,0 +1,27 @@
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(docs|code-docs|phpdocs)/(.*?)$ docs/$1
+
+RewriteRule ^(.*?)/(GMT|DST|UTC|gmt|dst|utc)/-([0-9]+).([0-9]+)/([0-9a-zA-Z\.\:\-]+)/([0-9]+)$ index.php?path=$1$2&$3=-$4.$5&seed=$6&num=$7
+RewriteRule ^(.*?)/(GMT|DST|UTC|gmt|dst|utc)/-([0-9]+).([0-9]+)/([0-9a-zA-Z\.\:\-]+)$ index.php?path=$1$2&$3=-$4.$5&seed=$6
+RewriteRule ^(.*?)/(GMT|DST|UTC|gmt|dst|utc)/-([0-9]+).([0-9]+)$ index.php?path=$1$2&$3=-$4.$5
+RewriteRule ^(.*?)/(GMT|DST|UTC|gmt|dst|utc)/-([0-9]+)$ index.php?path=$1$2&$3=-$4
+RewriteRule ^(.*?)/(GMT|DST|UTC|gmt|dst|utc)/([0-9]+).([0-9]+)/([0-9a-zA-Z\.\:\-]+)/([0-9]+)$ index.php?path=$1$2&$3=$4.$5&seed=$6&num=$7
+RewriteRule ^(.*?)/(GMT|DST|UTC|gmt|dst|utc)/([0-9]+).([0-9]+)/([0-9a-zA-Z\.\:\-]+)$ index.php?path=$1$2&$3=$4.$5&seed=$6
+RewriteRule ^(.*?)/(GMT|DST|UTC|gmt|dst|utc)/([0-9]+).([0-9]+)$ index.php?path=$1$2&$3=$4.$5
+RewriteRule ^(.*?)/(GMT|DST|UTC|gmt|dst|utc)/([0-9]+)$ index.php?path=$1$2&$3=$4
+RewriteRule ^(.*?)$ index.php?path=$1$2
+RewriteRule ^/(GMT|DST|UTC|gmt|dst|utc)/-([0-9]+).([0-9]+)/([0-9a-zA-Z\.\:\-]+)/([0-9]+)$ index.php?path=$1&$2=-$3.$4&seed=$5&num=$6
+RewriteRule ^/(GMT|DST|UTC|gmt|dst|utc)/-([0-9]+).([0-9]+)/([0-9a-zA-Z\.\:\-]+)$ index.php?path=$1&$2=-$3.$4&seed=$5
+RewriteRule ^/(GMT|DST|UTC|gmt|dst|utc)/-([0-9]+).([0-9]+)$ index.php?path=$1&$2=-$3.$4
+RewriteRule ^/(GMT|DST|UTC|gmt|dst|utc)/-([0-9]+)$ index.php?path=$1&$2=-$3
+RewriteRule ^/(GMT|DST|UTC|gmt|dst|utc)/([0-9]+).([0-9]+)/([0-9a-zA-Z\.\:\-]+)/([0-9]+)$ index.php?path=$1&$2=$3.$4&seed=$5&num=$6
+RewriteRule ^/(GMT|DST|UTC|gmt|dst|utc)/([0-9]+).([0-9]+)/([0-9a-zA-Z\.\:\-]+)$ index.php?path=$1&$2=$3.$4&seed=$5
+RewriteRule ^/(GMT|DST|UTC|gmt|dst|utc)/([0-9]+).([0-9]+)$ index.php?path=$1&$2=$3.$4
+RewriteRule ^/(GMT|DST|UTC|gmt|dst|utc)/([0-9]+)$ index.php?path=$1&$2=$3
+RewriteRule ^$ index.php?path=$1
+
+
